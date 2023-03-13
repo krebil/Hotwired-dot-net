@@ -1,0 +1,10 @@
+@model SaudiAramcoXGpt.PdfIngestor.Components.TurboStreamComponent
+
+<turbo-stream action="@Model.Action" target="@Model.Target">
+    <template>
+        @if (!string.IsNullOrWhiteSpace(Model.Template))
+        {
+            @Html.Raw(Model.Template)
+        }
+    </template>
+</turbo-stream>
