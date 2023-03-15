@@ -1,0 +1,46 @@
+﻿@page
+@using HotwiredDotNet.Ui.Components
+@using HotwiredDotNet.Core.Models
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1 class="display-4">Welcome</h1>
+
+<div id="http-stream" class="prose grid gap-5 mt-5">
+    <div>
+        This link uses a post request to get a stream response<br/>
+        <a asp-page="Index" data-turbo-method="Post">
+            @*A tag helper adds anti forgery token to links with data-turbo-method != get*@
+            Get HTTP stream response
+        </a>
+    </div>
+
+    <a asp-page="Index" asp-page-handler="RenderComponent">
+        @*A tag helper adds anti forgery token to links with data-turbo-method != get*@
+        Get HTTP stream response, with a controller rendered view component
+    </a>
+    <form enctype="multipart/form-data" asp-page="Index" method="post" class="mt-10">
+        This form uses a post request to get a stream response
+        <button class="px-2 py-1 border border-solid border-gray-500">
+            Get http stream response
+        </button>
+    </form>
+</div>
+
+
+<div class="prose mt-10">
+    <p>
+        <a asp-page="SeeOtherPage" data-turbo-method="Post">
+            @*A tag helper adds anti forgery token to links with data-turbo-method != get*@
+            Link using Post-Redirect-Get pattern
+        </a>
+    </p>
+    <p>
+        useful for buttons that should act like a form eg. delete buttons.
+    </p>
+    <p>
+        anchor tags with data-turbo-method != get will automatically get a anti-forgery token from a taghelper
+    </p>
+</div>

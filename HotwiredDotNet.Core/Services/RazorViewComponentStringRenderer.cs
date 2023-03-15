@@ -1,14 +1,16 @@
 using System.Text.Encodings.Web;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Abstractions;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace ***REMOVED***.***REMOVED***.Services;
-
-
+namespace HotwiredDotNet.Core.Services;
 public class MyViewComponentContext
 {
     public HttpContext? HttpContext { get; init; }
@@ -42,12 +44,12 @@ public class RazorViewComponentStringRenderer
 
         var httpContext = _httpContextAccessor.HttpContext;
 
-        if (httpContext == null || _actionContext.ActionContext == null)
+        if (httpContext == null )
         {
             throw new ArgumentNullException();
         }
-
-        var localActionContext = new ActionContext(httpContext, httpContext.GetRouteData(), _actionContext.ActionContext.ActionDescriptor);
+        
+        var localActionContext = new ActionContext(httpContext, httpContext.GetRouteData(), _actionContext.ActionContext?.ActionDescriptor ?? new ActionDescriptor());
 
         var context = new MyViewComponentContext
         {

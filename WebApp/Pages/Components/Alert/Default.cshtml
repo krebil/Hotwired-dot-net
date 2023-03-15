@@ -1,0 +1,30 @@
+@using WebApp.Components;
+@model AlertViewComponent
+
+@{
+    var bgColor = "";
+    var textColor = "";
+    switch (Model.AlertType)
+    {
+        case AlertType.Error:
+            bgColor = "bg-red-100";
+            textColor = "text-red-900";
+            break;
+        case AlertType.Info:
+            bgColor = "bg-blue-100";
+            textColor = "text-blue-900";
+            break;
+        case AlertType.Success:
+            bgColor = "bg-green-100";
+            textColor = "text-green-900";
+            break;
+        case AlertType.Warning:
+            bgColor = "bg-yellow-100";
+            textColor = "text-yellow-900";
+            break;
+    }
+}
+
+<div class="@bgColor @textColor w-fit py-2 px-3">
+    @Model.Text
+</div>

@@ -1,0 +1,43 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using WebApp.Helpers
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>@ViewData["Title"] - WebApp</title>
+    <script src="~/js/index.js" rel="script" type="text/javascript" asp-append-version="true"></script>
+    <link rel="stylesheet" href="~/css/output.css" asp-append-version="true"/>
+</head>
+<body>
+<div class="container mx-auto">
+    @RenderBody()
+    <div class="mt-10">
+        Messages from socket will appear here:
+        <ul id="stream-test" class="mt-5 list-disc" >
+        </ul>
+    </div>
+
+    @{
+        var protocol = Context.Request.IsHttps ? "wss" : "ws";
+
+        var streamSource = $"{protocol}://{Context.Request.Host}/streamtesthandler";
+    }
+
+    <div class="fixed w-full top-0 right-0 flex justify-end gap-3">
+        <turbo-frame id="alerts">
+            @{
+                var message = TempData.GetAlert();
+            }
+            @if (message != null)
+            {
+                var type = TempData.GetAlertType();
+                <vc:alert alert-type="@type" text="@message"></vc:alert>
+            }
+        </turbo-frame>
+    </div>
+
+    <turbo-stream-source src="@streamSource"/>
+</div>
+</body>
+</html>

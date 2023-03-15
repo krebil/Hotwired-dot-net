@@ -1,35 +1,28 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;
 
-namespace ***REMOVED***.***REMOVED***.ActionResults;
+namespace HotwiredDotNet.Core.ActionResults;
 
 /// <summary>
-/// A <see cref="IActionResultExecutor{RedirectToPageResult}"/> for <see cref="RedirectToPageResult"/>.
+/// A <see cref="IActionResultExecutor{TResult}"/> for <see cref="RedirectToPageResult"/>.
 /// </summary>
 public partial class SeeOtherResultExecutor : IActionResultExecutor<SeeOtherResult>
 {
-    private readonly ILogger _logger;
     private readonly IUrlHelperFactory _urlHelperFactory;
 
     /// <summary>
     /// Initializes a new instance of <see cref="SeeOtherResultExecutor"/>.
     /// </summary>
-    /// <param name="loggerFactory">The factory used to create loggers.</param>
     /// <param name="urlHelperFactory">The factory used to create url helpers.</param>
-    public SeeOtherResultExecutor(ILoggerFactory loggerFactory, IUrlHelperFactory urlHelperFactory)
+    public SeeOtherResultExecutor(IUrlHelperFactory urlHelperFactory)
     {
-        if (loggerFactory == null)
-        {
-            throw new ArgumentNullException(nameof(loggerFactory));
-        }
-
         if (urlHelperFactory == null)
         {
             throw new ArgumentNullException(nameof(urlHelperFactory));
         }
 
-        _logger = loggerFactory.CreateLogger<SeeOtherResultExecutor>();
         _urlHelperFactory = urlHelperFactory;
     }
 
@@ -61,12 +54,10 @@ public partial class SeeOtherResultExecutor : IActionResultExecutor<SeeOtherResu
         }
 
 
-
         context.HttpContext.Response.StatusCode = StatusCodes.Status303SeeOther;
-        context.HttpContext.Response.Headers.Location = destinationUrl;
+        context.HttpContext.Response.Headers["Location"] = destinationUrl;
+        context.HttpContext.Response.Headers["location"] = destinationUrl;
 
         return Task.CompletedTask;
     }
-
-   
 }

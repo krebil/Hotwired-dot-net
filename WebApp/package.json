@@ -1,0 +1,28 @@
+{
+  "name": "hotwired-dot-net-testapp",
+  "version": "1.0.0",
+  "description": "",
+  "source": "src/app.js",
+  "default": "wwwroot/js/index.js",
+  "targets": {
+    "default": {}
+  },
+  "scripts": {
+    "build-tailwind": "npx tailwindcss -i ./src/input.css -o ./wwwroot/css/output.css",
+    "watch-tailwind": "npx tailwindcss -i ./src/input.css -o ./wwwroot/css/output.css --watch",
+    "watch-parcel": "npx parcel watch",
+    "build-parcel": "npx parcel build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hotwired/stimulus": "^3.2.1",
+    "@hotwired/turbo": "^7.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.9",
+    "parcel": "^2.8.3",
+    "tailwindcss": "^3.2.4"
+  }
+}

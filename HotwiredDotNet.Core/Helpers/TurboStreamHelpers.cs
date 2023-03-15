@@ -1,4 +1,6 @@
-namespace ***REMOVED***.***REMOVED***.Helpers;
+using Microsoft.AspNetCore.Http;
+
+namespace HotwiredDotNet.Core.Helpers;
 
 public static class TurboStreamHelpers
 {
