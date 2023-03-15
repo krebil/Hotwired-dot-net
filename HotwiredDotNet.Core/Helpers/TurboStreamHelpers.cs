@@ -1,4 +1,6 @@
-namespace SaudiAramcoXGpt.PdfIngestor.Helpers;
+using Microsoft.AspNetCore.Http;
+
+namespace HotwiredDotNet.Core.Helpers;
 
 public static class TurboStreamHelpers
 {

@@ -1,15 +1,13 @@
-// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace SaudiAramcoXGpt.PdfIngestor.ActionResults;
+namespace HotwiredDotNet.Core.ActionResults;
 
 /// <summary>
-/// An <see cref="ActionResult"/> that returns a Found (302)
-/// or Moved Permanently (301) response with a Location header.
+/// An <see cref="ActionResult"/> that returns a Found (303)
 /// Targets a registered route.
 /// </summary>
 public class SeeOtherResult : ActionResult, IKeepTempDataResult
