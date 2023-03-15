@@ -98,8 +98,12 @@ Turbo [expects the server to return 303 on form submission](https://turbo.hotwir
     }
 ```
 
-### Other stuff
+## Other stuff
 This is all the stuff that works behind the scenes, that you don't have to actively use.
 
-#### AnchorTagHelper
+### AnchorTagHelper
 A tag-helper that looks whether an anchor tag has the **[data-turbo-method](https://turbo.hotwired.dev/reference/attributes)** attribute. If it does, it will add an anti-forgery token so that when turbo generates a form it validate correctly.
+
+
+## Work in progress
+The socket implementation seen in the demo project is a work in progress. I'm still trying to figure out if there is a good way to make some generic implementation.
