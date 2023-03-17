@@ -24,6 +24,8 @@ public class IndexModel : PageModel
     {
     }
 
+    
+    
     public async Task<IActionResult> OnGetRenderComponent()
     {
         HttpContext.SetTurboStreamMimeType();
