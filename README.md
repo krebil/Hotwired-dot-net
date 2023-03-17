@@ -16,13 +16,32 @@ If you want intellisense for the TurboStream ViewComponent, add the following to
 
 ## Usage
 
+### TurboFrames
+
+Turbo frames can be rendered using a tag-helper to generate the url like with the .net anchorTagHelper and formTagHelper.
+
+```html
+<turbo-frame id="frame" asp-page="TurboFrame" asp-page-handler="OnGet" >
+        
+</turbo-frame>
+```
+
+This will result in:
+```html
+<turbo-frame id="frame" src="https://localhost:44362/TurboFrame?handler=OnGet" complete="">
+
+</turbo-frame>
+```
+
+It also works for mvc routes eg. **asp-controller** and **asp-action**
+
 ### TurboStream
 
 #### Views
 
 In view you can use your view-component with either tag-helper syntax,
 
-```razor
+```html
 <vc:turbo-stream action="Update" target="stream-target" template="Html"></vc:turbo-stream>
 ```
 
