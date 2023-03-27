@@ -25,7 +25,7 @@ public class SeeOtherPage : PageModel
         
         //same as above
         //there is also a version of SetUnprocessableEntityStatusCode for ViewResult
-        return Page().SetSeeOtherStatusCode();
+        return Page().SeeOther();
     }
  
     public IActionResult OnPost()

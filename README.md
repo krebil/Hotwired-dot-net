@@ -116,6 +116,42 @@ Turbo [expects the server to return 303 on form submission](https://turbo.hotwir
         return new SeeOtherResult("SeeOtherPage");
     }
 ```
+Sometimes it makes sense to return the current page after a form submission, for this there is an extension method on Page and View results. 
+```c#
+    public IActionResult OnPost()
+    {
+        return Page().SeeOther();
+    }
+```
+```c#
+    public IActionResult OnPost()
+    {
+        return View().SeeOther();
+    }
+```
+
+### Form errors
+for form errors you can use a similar extension method on the Page and View results to change the status code to 422, since turbo expects either 422 or 50X on form errors.
+```c#
+    public IActionResult OnPost()
+    {
+        if (!ModelState.IsValid)
+        {
+            return Page().UnprocessableEntity();
+        }
+        return Page().SeeOther();
+    }
+```
+```c#
+    public IActionResult OnPost()
+    {
+        if (!ModelState.IsValid)
+        {
+            return View().UnprocessableEntity();
+        }
+        return View().SeeOther();
+    }
+```
 
 ## Other stuff
 This is all the stuff that works behind the scenes, that you don't have to actively use.

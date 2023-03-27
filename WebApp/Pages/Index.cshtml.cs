@@ -33,7 +33,7 @@ public class IndexModel : PageModel
         pageResult.StatusCode = 422;*/
         //Same as above.
         //there is also a version of SetUnprocessableEntityStatusCode for ViewResult
-        return Page().SetUnprocessableEntityStatusCode();
+        return Page().UnprocessableEntity();
     }
     
     public async Task<IActionResult> OnGetRenderComponent()
