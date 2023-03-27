@@ -39,7 +39,7 @@ It also works for mvc routes eg. **asp-controller** and **asp-action**
 
 #### Views
 
-In view you can use your view-component with either tag-helper syntax,
+In a view you can use your view-component with either tag-helper syntax,
 
 ```html
 <vc:turbo-stream action="Update" target="stream-target" template="Html"></vc:turbo-stream>
