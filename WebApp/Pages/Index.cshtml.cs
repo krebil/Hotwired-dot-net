@@ -24,7 +24,17 @@ public class IndexModel : PageModel
     {
     }
 
-    
+    public IActionResult OnPostError()
+    {
+        ModelState.AddModelError("", "I'm an error");
+        
+        //Turbo form responses must be 422 or 50x
+        /*var pageResult = Page() ;
+        pageResult.StatusCode = 422;*/
+        //Same as above.
+        //there is also a version of SetUnprocessableEntityStatusCode for ViewResult
+        return Page().SetUnprocessableEntityStatusCode();
+    }
     
     public async Task<IActionResult> OnGetRenderComponent()
     {

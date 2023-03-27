@@ -1,4 +1,5 @@
 using HotwiredDotNet.Core.ActionResults;
+using HotwiredDotNet.Core.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using WebApp.Components;
@@ -11,6 +12,20 @@ public class SeeOtherPage : PageModel
     public void OnGet()
     {
         
+    }
+
+    public IActionResult OnPostPageResult()
+    {
+        //You can pass data between pages using the TempData dictionary as normal
+        AlertHelper.SetAlert(TempData, "I'm an alert from page handler");
+        AlertHelper.SetAlertType(TempData, AlertType.Warning);
+        /*var page = Page();
+        page.StatusCode = 303;
+        return page;*/
+        
+        //same as above
+        //there is also a version of SetUnprocessableEntityStatusCode for ViewResult
+        return Page().SetSeeOtherStatusCode();
     }
  
     public IActionResult OnPost()
