@@ -1130,6 +1130,10 @@ video {
   padding-bottom: 2.5rem;
 }
 
+.pt-40 {
+  padding-top: 10rem;
+}
+
 .text-blue-900 {
   --tw-text-opacity: 1;
   color: rgb(30 58 138 / var(--tw-text-opacity));
