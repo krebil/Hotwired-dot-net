@@ -6,7 +6,7 @@
 
 <h1 class="display-4">Welcome</h1>
 
-<div id="http-stream" class="prose grid gap-5 mt-5">
+<div id="http-stream" class="mt-5 grid gap-5 prose">
     <div>
         This link uses a post request to get a stream response<br/>
         <a asp-page="Index" data-turbo-method="Post">
@@ -21,14 +21,14 @@
     </a>
     <form enctype="multipart/form-data" asp-page="Index" method="post" class="mt-10">
         This form uses a post request to get a stream response
-        <button class="px-2 py-1 border border-solid border-gray-500">
+        <button class="border border-solid border-gray-500 px-2 py-1">
             Get http stream response
         </button>
     </form>
 </div>
 
 
-<div class="prose mt-10">
+<div class="mt-10 prose">
     <p>
         <a asp-page="SeeOtherPage" data-turbo-method="Post">
             @*A tag helper adds anti forgery token to links with data-turbo-method != get*@
@@ -55,12 +55,12 @@
 <div class="mt-40 pt-40">
     <form enctype="multipart/form-data" asp-page="Index" asp-page-handler="Error" asp-fragment="errorFrame" method="post" class="mt-10">
         This form returns an error response
-        <button class="px-2 py-1 border border-solid border-gray-500">
+        <button class="border border-solid border-gray-500 px-2 py-1">
             Get error
         </button>
     </form>
     @if (ModelState.ErrorCount > 0)
     {
-        <p class="text-red-900 py-5">422 - Unprocessable Entity</p>
+        <p class="py-5 text-red-900">422 - Unprocessable Entity</p>
     }
 </div>

@@ -24,7 +24,7 @@
         var streamSource = $"{protocol}://{Context.Request.Host}/streamtesthandler";
     }
 
-    <div class="fixed w-full top-0 right-0 flex justify-end gap-3">
+    <div class="fixed top-0 right-0 flex w-full justify-end gap-3">
         <turbo-frame id="alerts">
             @{
                 var message = TempData.GetAlert();
