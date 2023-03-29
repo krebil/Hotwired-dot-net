@@ -1,42 +1,42 @@
 ﻿namespace HotwiredDotNet.Core.Models
 {
     /// <summary>
-    /// Represents the action to perform on a <see href="https://turbo.hotwired.dev/reference/streams#the-seven-actions">turbo-stream target</see>. 
+    /// Represents the action to perform on a <a href="https://turbo.hotwired.dev/reference/streams#the-seven-actions">turbo-stream target</a>. 
     /// </summary>
     public enum TurboStreamAction
     {
         /// <summary>
-        /// <see href="https://turbo.hotwired.dev/reference/streams#append">Append</see> Append the template to the target.
+        /// <a href="https://turbo.hotwired.dev/reference/streams#append">Append</a> Append the template to the target.
         /// </summary>
         Append,
 
         /// <summary>
-        /// <see href="https://turbo.hotwired.dev/reference/streams#prepend">Prepend</see> the template to the target.
+        /// <a href="https://turbo.hotwired.dev/reference/streams#prepend">Prepend</a> the template to the target.
         /// </summary>
         Prepend,
 
         /// <summary>
-        /// <see href="https://turbo.hotwired.dev/reference/streams#replace">Replace</see> the target with the template.
+        /// <a href="https://turbo.hotwired.dev/reference/streams#replace">Replace</a> the target with the template.
         /// </summary>
         Replace,
 
         /// <summary>
-        /// <see href="https://turbo.hotwired.dev/reference/streams#update">Update</see> the target with the template.
+        /// <a href="https://turbo.hotwired.dev/reference/streams#update">Update</a> the target with the template.
         /// </summary>
         Update,
 
         /// <summary>
-        /// <see href="https://turbo.hotwired.dev/reference/streams#remove">Remove</see> the target.
+        /// <a href="https://turbo.hotwired.dev/reference/streams#remove">Remove</a> the target.
         /// </summary>
         Remove,
 
         /// <summary>
-        /// Insert the template  <see href="https://turbo.hotwired.dev/reference/streams#before">before</see> the target.
+        /// Insert the template  <a href="https://turbo.hotwired.dev/reference/streams#before">before</a> the target.
         /// </summary>
         Before,
 
         /// <summary>
-        /// Insert the template <see href="https://turbo.hotwired.dev/reference/streams#after">after</see> the target.
+        /// Insert the template <a href="https://turbo.hotwired.dev/reference/streams#after">after</a> the target.
         /// </summary>
         After
     }
