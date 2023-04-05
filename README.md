@@ -4,9 +4,10 @@
 
 Find the NuGet packages here:
 
-https://www.nuget.org/packages/HotwiredDotNet.Core/
+[HotwiredDotNet.Core](https://www.nuget.org/packages/HotwiredDotNet.Core/)
 
-https://www.nuget.org/packages/HotwiredDotNet.Ui/
+[HotwiredDotNet.Ui](https://www.nuget.org/packages/HotwiredDotNet.Ui/)
+
 
 Once installed add the following to your program.cs file:
 
