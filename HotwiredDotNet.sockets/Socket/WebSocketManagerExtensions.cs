@@ -11,8 +11,7 @@ public static class WebSocketManagerExtensions
 {
     public static IServiceCollection AddWebSocketManager(this IServiceCollection services)
     {
-        services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-        services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+
 
         services.AddTransient<ConnectionManager>();
 

@@ -5,6 +5,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>HotwiredDotNet.Core</RootNamespace>
+    <Title>Hotwired Dot Net Core</Title>
+    <Authors>Tobias Mønster</Authors>
+    <Description>A set of helpers and actionresults to make Hotwired development in dotnet feel more like native .Net features.</Description>
+    <PackageProjectUrl>https://github.com/krebil/Hotwired-dot-net</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/krebil/Hotwired-dot-net/blob/main/LICENSE.md</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/krebil/Hotwired-dot-net</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
