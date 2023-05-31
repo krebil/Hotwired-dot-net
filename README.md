@@ -110,7 +110,23 @@ public async Task<IActionResult> OnGetRenderComponent()
 }
 ```
 ### Post / Redirect / Get
-Turbo [expects the server to return 303 on form submission](https://turbo.hotwired.dev/handbook/drive#redirecting-after-a-form-submission). To better allow for this, a new ActionResult has been introduces called SeeOther
+Turbo [expects the server to return 303 on form submission](https://turbo.hotwired.dev/handbook/drive#redirecting-after-a-form-submission). To better allow for this, a new ActionResult has been introduces called SeeOther. While a standard 302 redirect will sometimes work it's important to note the differences between 302 and 303. 302 will redirect but if you use put, delete or patch the same method will be used for the redirect while 303 will always use **GET** after a redirect:.
+
+| fetchoriginal method | fetchoriginal response | redirect method |
+| -------- | ------- | ------- |
+| GET | 302 | GET |
+| GET |	303 | GET |
+| POST | 302 | GET |
+| POST | 303 | GET |
+| PUT | 302 | **PUT** |
+| PUT | 303 | GET |
+| PATCH | 302 | **PATCH** |
+| PATCH | 303 |	GET |
+| DELETE | 302 | **DELETE** |
+| DELETE | 303 | GET |
+
+
+
 ```c#
     public IActionResult OnPost()
     {
