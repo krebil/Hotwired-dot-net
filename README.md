@@ -110,7 +110,7 @@ public async Task<IActionResult> OnGetRenderComponent()
 }
 ```
 ### Post / Redirect / Get
-Turbo [expects the server to return 303 on form submission](https://turbo.hotwired.dev/handbook/drive#redirecting-after-a-form-submission). To better allow for the a new ActionResult has been introduces called SeeOther
+Turbo [expects the server to return 303 on form submission](https://turbo.hotwired.dev/handbook/drive#redirecting-after-a-form-submission). To better allow for this, a new ActionResult has been introduces called SeeOther
 ```c#
     public IActionResult OnPost()
     {
