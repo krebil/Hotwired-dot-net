@@ -9,7 +9,6 @@
     <Authors>Tobias Mønster</Authors>
     <Description>Taghelpers and viewcomponents to make HotWired feel more like native .net features </Description>
     <PackageProjectUrl>https://github.com/krebil/Hotwired-dot-net</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/krebil/Hotwired-dot-net/blob/main/LICENSE.md</PackageLicenseUrl>
     <RepositoryUrl>https://github.com/krebil/Hotwired-dot-net</RepositoryUrl>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>1.0.1</Version>
