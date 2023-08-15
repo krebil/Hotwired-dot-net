@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace sockets;
+namespace Sockets;
 
 public static class SocketSessionExtensions
 {

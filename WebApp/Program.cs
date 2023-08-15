@@ -1,6 +1,7 @@
-using sockets.Socket;
 using WebApp;
 using HotwiredDotNet.Core.Extensions;
+using Sockets.Socket;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

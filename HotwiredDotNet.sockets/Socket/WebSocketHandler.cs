@@ -4,11 +4,9 @@ using HotwiredDotNet.Core.Models;
 using HotwiredDotNet.Core.Services;
 using HotwiredDotNet.Ui.Components;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
-using Sockets.Socket;
 
-namespace sockets.Socket;
+namespace Sockets.Socket;
 
 public abstract class WebSocketHandler
 {

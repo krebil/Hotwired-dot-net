@@ -4,7 +4,6 @@ using HotwiredDotNet.Core.Models;
 using HotwiredDotNet.Core.Services;
 using HotwiredDotNet.Ui.Components;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
-using sockets.Socket;
 using Sockets.Socket;
 
 namespace WebApp;

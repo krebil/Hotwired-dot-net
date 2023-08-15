@@ -1,11 +1,10 @@
 ﻿using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Sockets.Socket;
 
-namespace sockets.Socket;
+namespace Sockets.Socket;
 
 public static class WebSocketManagerExtensions
 {

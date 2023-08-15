@@ -1,7 +1,7 @@
 ﻿using System.Net.WebSockets;
 using Microsoft.AspNetCore.Http;
 
-namespace sockets.Socket;
+namespace Sockets.Socket;
 
 public class WebSocketManagerMiddleware
 {
