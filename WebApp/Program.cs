@@ -9,7 +9,6 @@ builder.Services.AddRazorPages().AddSessionStateTempDataProvider();
 builder.Services.AddSession();
 builder.RegisterHotwiredDotNetCore();
 builder.Services.AddWebSocketManager();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -20,6 +19,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseTurboFrameMiddleware();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseSession();  
