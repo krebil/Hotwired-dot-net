@@ -182,6 +182,17 @@ This is all the stuff that works behind the scenes, that you don't have to activ
 ### AnchorTagHelper
 A tag-helper that looks whether an anchor tag has the **[data-turbo-method](https://turbo.hotwired.dev/reference/attributes)** attribute. If it does, it will add an anti-forgery token so that when turbo generates a form it validate correctly.
 
+## Middleware
+
+### TurboFrame Middleware
+The TurboFrame middleware removes unused html from the response body when the request has the **turbo-frame** header present, which is default in turbo-frame requests. This is done to reduce the amount of data sent over the wire.
+It also ensures that any turbo-streams will **not** be removed from the response.
+
+To add the middleware to your pipeline, add the following to your Startup.cs/Program.cs file:
+```c#
+app.UseTurboFrameMiddleware();
+```
 
 ## Work in progress
 The socket implementation seen in the demo project is a work in progress. I'm still trying to figure out if there is a good way to make some generic implementation.
+
