@@ -112,7 +112,7 @@ public async Task<IActionResult> OnGetRenderComponent()
 ### Post / Redirect / Get
 Turbo [expects the server to return 303 on form submission](https://turbo.hotwired.dev/handbook/drive#redirecting-after-a-form-submission). To better allow for this, a new ActionResult has been introduces called SeeOther. While a standard 302 redirect will sometimes work it's important to note the differences between 302 and 303. 302 will redirect but if you use put, delete or patch the same method will be used for the redirect while 303 will always use **GET** after a redirect:.
 
-| fetchoriginal method | fetchoriginal response | redirect method |
+| fetch original method | fetch original response | redirect method |
 | -------- | ------- | ------- |
 | GET | 302 | GET |
 | GET |	303 | GET |
@@ -180,18 +180,19 @@ for form errors you can use a similar extension method on the Page and View resu
 This is all the stuff that works behind the scenes, that you don't have to actively use.
 
 ### AnchorTagHelper
-A tag-helper that looks whether an anchor tag has the **[data-turbo-method](https://turbo.hotwired.dev/reference/attributes)** attribute. If it does, it will add an anti-forgery token so that when turbo generates a form it validate correctly.
+A tag-helper that checks whether an anchor tag has the **[data-turbo-method](https://turbo.hotwired.dev/reference/attributes)** attribute. If it does, it adds an anti-forgery token so that when turbo generates a form it validate correctly.
 
 ## Middleware
 
 ### TurboFrame Middleware
 The TurboFrame middleware removes unused html from the response body when the request has the **turbo-frame** header present, which is default in turbo-frame requests. This is done to reduce the amount of data sent over the wire.
-It also ensures that any turbo-streams will **not** be removed from the response.
+It also ensures that any turbo-streams will **not** be removed from the response. It's preferable to handle this in your own code, but it can be quite cumbersome to add this logic in to an existing application. Especially when trying to handle both frames and streams.
 
 To add the middleware to your pipeline, add the following to your Startup.cs/Program.cs file:
 ```c#
 app.UseTurboFrameMiddleware();
 ```
+*NOTE:* The Turbo community as opposed to the htmx community prefers sending fully formed HTML pages. This pattern is a deviation from that.
 
 ## Work in progress
 The socket implementation seen in the demo project is a work in progress. I'm still trying to figure out if there is a good way to make some generic implementation.
